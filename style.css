@@ -1,16 +1,17 @@
 :root{
-    --text-color:hsl(0, 100%, 100%);
-    --main-color:hsl(0, 0%, 0%);
-    --key-color:rgb(56, 56, 56);
-    
+   --text-color:white;
+   --main-color:rgb(48, 50, 144);
+   --key-color:rgb(66, 147, 166);  
 }
+
 *{
     margin:0;
     padding:0;
+    font-family:"poppins";
 }
 @font-face{
     font-family:"Poppins";
-    src:url(Assets/Fonts/Poppins-Black.ttf);
+    src:url(Assets/Fonts/Poppins-Regular.ttf);
     font-weight:400;
 }
 @keyframes down{
@@ -38,11 +39,16 @@
 }
 body{
     height:fit-content;
-    background:linear-gradient(120deg,white -75%,var(--main-color));
+    background:radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+        radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), 
+        radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%);
+    background-color:#050505;
+    background-attachment:fixed;
     padding:0rem 0rem;
     box-sizing:border-box;
     display:flex;
     flex-direction:column;
+    flex-wrap:nowrap;
     color:var(--text-color);
 }
 button{
@@ -61,6 +67,7 @@ header{
     align-items:center;
     background:transparent;
     backdrop-filter:blur(25px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     z-index:100;
 }
 header h1{
@@ -71,7 +78,7 @@ header ul{
     gap:1.5rem;
     list-style:none;
     font-weight:700;
-    color:black;
+    color:var(--text-color);
 }
 header ul li {
     cursor:pointer;
@@ -85,9 +92,10 @@ section{
     height:80vh;
     padding:20px;
     display:flex;
-    padding:5.2rem;
+    padding:5rem;
 }
 .Home{
+    padding-top:7.2rem;
     justify-content:space-between;
     align-items:center;
 }
@@ -140,13 +148,16 @@ section{
     text-align: center;
     line-height:1.5rem;
 }
+.About p{
+    max-width:45%;
+}
 .Stack{
     height:40vh;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    gap:1rem;
+    gap:3rem;
 }
 .Stack div{
     display:flex;
@@ -163,91 +174,49 @@ section{
     align-items:center;
     border-radius:15px;
     box-shadow:0 0 5px rgb(131, 131, 131);
-    background:rgb(67, 67, 67);
+    backdrop-filter:blur(25px);
     cursor:pointer;
     transition:transform linear 0.3s;
     position:relative;
     font-family:"Poppins";
-}
-.Stack div div::before{
-    content:"";
-    height:100%;
-    width:100%;
-    border-radius:inherit;
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    z-index:-3;
-    padding:0.3rem;
-    animation:spi 7s infinite;
-    filter:blur(01px);
+    border:solid 0.01rem;
+    
 }
 .Stack div div i{
     font-size:2rem;
 }
-.html-div::before{
-    background:linear-gradient(var(--angle),orangered,transparent,orangered,transparent);
-}
-.css-div::before{
-    background:linear-gradient(var(--angle),rgb(177, 17, 195),transparent,rgb(177, 17, 195),transparent);
-}
-.js-div::before{
-    background:linear-gradient(var(--angle),yellow,transparent,yellow , transparent);
-}
-.linux-div::before{
-    background:linear-gradient(var(--angle),white,transparent,white ,transparent);
-}
 .html-div{
-    color:rgb(255, 153, 116);
+    color:hsl(12, 77%, 52%);
+
 }
 .css-div{
-    color:#f176ff;
+    color:hsl(300, 98%, 50%);
 }
 .js-div{
-    color:rgb(255, 255, 112);
+    color:hsl(52, 84%, 63%);
 }
-.linux-div i{
+.linux-div{
     color:white;
     font-weight:500;
 }
-.Projects{
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    gap:1.5rem;
+.html-div:hover{
+    transition:linear 0.4s;
+    background:hsla(12, 77%, 52%, 0.073);
+    transform:scale(110%);
 }
-.Projects .container{
-    height:100%;
-    width:100%;
-    border:solid;
-    border-radius:15px;
-    padding:1.5rem;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:2.5rem;
+.css-div:hover{
+    transition:linear 0.4s;
+    background:hsla(300, 98%, 50%, 0.073);
+    transform:scale(110%);
 }
-.Projects .container > div{
-    height:100%;
-    width:40%;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:start;
-    border:solid;
-    padding:none;
+.js-div:hover{
+    transition:linear 0.4s;
+    background:hsla(52, 84%, 63%, 0.073);
+    transform:scale(110%);
 }
-.Projects .container .project1 .project1-photo{
-    width:100%;
-    height:75%;
-    background:url(Assets/Screenshot\ 2026-01-01\ at\ 22-42-16\ Password\ Generator.png);
-    background-position:center;
+.linux-div:hover{
+    transition:linear 0.4s;
+    background:hsla(0, 0%, 100%, 0.073);
+    transform:scale(110%);
 }
-.Projects .container .project1 .project1-description{
-    height:25%;
-    width:100%;
-    background:linear-gradient(120deg,var(--main-color),black,grey);
-    background-repeat:no-repeat;
-}
+
