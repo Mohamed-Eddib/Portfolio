@@ -3,6 +3,224 @@
    --main-color:rgb(48, 50, 144);
    --key-color:rgb(66, 147, 166);  
 }
+.is-visible {
+  opacity: 1 !important;
+    transform: translateY(0) !important;
+    pointer-events: auto !important;
+    visibility: visible !important;
+}
+*{
+    margin:0;
+    padding:0;
+    font-family:"poppins";
+}
+@font-face{
+    font-family:"Poppins";
+    src:url(Assets/Fonts/Poppins-Regular.ttf);
+    font-weight:400;
+}
+@keyframes down{
+    from{
+        transform:translate(-10%,-25%);
+        rotate:10deg;
+        transform:scale(110%);
+    }
+    to{
+        transform:translate(0);
+    }
+}
+body{
+    height:fit-content;
+    background:radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+               radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), 
+               radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%);
+    background-color:#050505;
+    background-attachment:fixed;
+    padding:0rem 0rem;
+    box-sizing:border-box;
+    display:flex;
+    flex-direction:column;
+    flex-wrap:nowrap;
+    gap:3rem;
+    color:var(--text-color);
+}
+header{
+    position:fixed;
+    width:100%;
+    box-sizing:border-box;
+    padding:1.5rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:transparent;
+    backdrop-filter:blur(25px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index:100;
+}
+header h1{
+    color:var(--key-color);
+}
+header ul{
+    display:flex;
+    gap:1.5rem;
+    list-style:none;
+    font-weight:700;
+    color:var(--text-color);
+}
+header ul li {
+    cursor:pointer;
+}
+header ul li:hover {
+   transition:ease-in-out 0.3s;
+   color:var(--key-color);
+   text-decoration:underline var(--key-color);
+}
+section{
+    height:80vh;
+    padding:20px;
+    display:flex;
+    padding:5rem;
+}
+.Home{
+    padding-top:7.2rem;
+    justify-content:space-between;
+    align-items:center;
+}
+.Home div{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:start;
+    gap:0.5rem;
+}
+.Home div div{
+    width:fit-content;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    font-size:2.5rem;
+    gap:1.4rem;
+}
+.Home div div i{
+    transition:linear 0.2s;
+}
+.Home div div i:hover{
+    font-size:2.7rem;
+    color:var(--key-color);
+}
+.Home div p{
+    font-size:1rem;
+}
+.Home h1{
+    width:19rem;
+}
+.Home span{
+    color:var(--key-color);
+}
+.Home img{
+    box-shadow:0 0 15px white;
+    border:solid rgb(231, 231, 231) 1rem;
+    border-radius:50%;
+    animation:down 3s 1;
+}
+.About{
+    height:100%;
+    width:100%;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:1.5rem;
+    text-align: center;
+    line-height:1.7rem;
+    box-sizing:border-box;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Slowed down to see it better */
+    pointer-events: none;
+}
+.About p{
+    max-width:45%;
+}
+.Stack{
+    height:40vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:3rem;
+}
+.Stack div{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:3rem;
+}
+.Stack div div{
+    height:45vh;
+    width:35vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    border-radius:15px;
+    box-shadow:0 0 5px rgb(131, 131, 131);
+    backdrop-filter:blur(25px);
+    cursor:pointer;
+    transition:transform linear 0.3s;
+    position:relative;
+    font-family:"Poppins";
+    border:solid 0.01rem;
+    
+}
+.Stack div div i{
+    font-size:2rem;
+}
+.html-div{
+    color:hsl(12, 77%, 52%);
+    background:hsla(12, 77%, 52%, 0.021);
+
+}
+.css-div{
+    color:hsl(300, 98%, 50%);
+    background:hsla(300, 98%, 50%, 0.021);
+}
+.js-div{
+    color:hsl(52, 84%, 63%);
+    background:hsla(52, 84%, 63%, 0.021);
+}
+.linux-div{
+    color:white;
+    font-weight:500;
+    background:hsla(0, 0%, 100%, 0.021);
+}
+.html-div:hover{
+    transition:linear 0.4s;
+    background:hsla(12, 77%, 52%, 0.073);
+    transform:scale(110%);
+}
+.css-div:hover{
+    transition:linear 0.4s;
+    background:hsla(300, 98%, 50%, 0.073);
+    transform:scale(110%);
+}
+.js-div:hover{
+    transition:linear 0.4s;
+    background:hsla(52, 84%, 63%, 0.073);
+    transform:scale(110%);
+}
+.linux-div:hover{
+    transition:linear 0.4s;
+    background:hsla(0, 0%, 100%, 0.073);
+    transform:scale(110%);
+}
+@media screen and (max-width:600px) {
+    :root{
+   --text-color:white;
+   --main-color:rgb(48, 50, 144);
+   --key-color:rgb(66, 147, 166);  
+}
 
 *{
     margin:0;
@@ -24,19 +242,6 @@
         transform:translate(0);
     }
 }
-@property --angle{
-    syntax:"<angle>";
-    initial-value:120deg;
-    inherits:false;
-}
-@keyframes spin{
-    from{
-        --angle:120deg;
-    }
-    to{
-        --angle:360deg;
-    }
-}
 body{
     height:fit-content;
     background:radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
@@ -51,15 +256,10 @@ body{
     flex-wrap:nowrap;
     color:var(--text-color);
 }
-button{
-    cursor:pointer;
-    background:transparent;
-    border:none;
-    font-size:1.3rem;
-}
 header{
     position:fixed;
-    width:100%;
+    min-width:fit-content;
+    height:0%;
     box-sizing:border-box;
     padding:1.5rem;
     display:flex;
@@ -72,6 +272,7 @@ header{
 }
 header h1{
     color:var(--key-color);
+    display:none;
 }
 header ul{
     display:flex;
@@ -149,7 +350,8 @@ section{
     line-height:1.5rem;
 }
 .About p{
-    max-width:45%;
+    max-width:100%;
+
 }
 .Stack{
     height:40vh;
@@ -220,3 +422,4 @@ section{
     transform:scale(110%);
 }
 
+}
