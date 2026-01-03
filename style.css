@@ -71,9 +71,9 @@ header ul li {
     cursor:pointer;
 }
 header ul li:hover {
-   transition:ease-in-out 0.3s;
+   transition:color ease-in-out 0.3s , transform ease-in-out 0.3s;
    color:var(--key-color);
-   text-decoration:underline var(--key-color);
+   transform:scale(110%);
 }
 section{
     height:80vh;
